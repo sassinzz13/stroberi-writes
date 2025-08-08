@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/ViewContents/ViewContents.module.css"],"sourcesContent":["/* centers the entire view vertically & horizontally */\n.wrapper {\n  display: flex;\n  justify-content: center;\n  padding: 4rem 1rem;\n\n}\n\n/* content box */\n.articleContainer {\n  max-width: 800px;\n  width: 100%;\n  padding: 2rem;\n  background-color: #ffffff;\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  font-family: \"Arial\", sans-serif;\n  text-align: center;\n}\n\n/* heading */\n.title {\n  font-size: 2.5rem;\n  margin-bottom: 2rem;\n  font-family: \"Arial\", sans-serif;\n  color: #222;\n}\n\n/* image container, centered */\n.imageWrapper {\n  position: relative;\n  width: 100%;\n  aspect-ratio: 5 / 3;\n  overflow: hidden;\n  border-radius: 8px;\n  margin: 0 auto 2rem auto;\n}\n\n/* Next.js Image */\n.image {\n  object-fit: cover;\n}\n\n/* content paragraphs */\n.articleContent p {\n  font-size: 1.1rem;\n  line-height: 1.8;\n  color: #444;\n  margin-bottom: 1.2rem;\n  font-family: \"Open Sans\", sans-serif;\n  text-align: justify;\n}\n\n\n\n"],"names":[],"mappings":"AACA;;;;;;AAQA;;;;;;;;;;;AAYA;;;;;;;AAQA;;;;;;;;;AAUA;;;;AAKA"}}]
+}

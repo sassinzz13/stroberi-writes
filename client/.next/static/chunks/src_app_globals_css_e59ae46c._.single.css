@@ -1,0 +1,24 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #212529;
+  background-color: #ffd1df;
+  font-family: Inter, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #0070f3;
+  --font-size-base: 16px;
+}
+
+/*# sourceMappingURL=src_app_globals_css_e59ae46c._.single.css.map*/

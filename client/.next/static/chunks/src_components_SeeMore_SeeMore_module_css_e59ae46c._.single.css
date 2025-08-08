@@ -1,0 +1,56 @@
+/* [project]/src/components/SeeMore/SeeMore.module.css [app-client] (css) */
+.SeeMore-module__221lAG__home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.SeeMore-module__221lAG__home h1 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.SeeMore-module__221lAG__grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  display: grid;
+}
+
+.SeeMore-module__221lAG__card {
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform .2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+}
+
+.SeeMore-module__221lAG__card:hover {
+  transform: scale(1.02);
+}
+
+.SeeMore-module__221lAG__imageWrapper {
+  aspect-ratio: 5 / 3;
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.SeeMore-module__221lAG__image {
+  object-fit: cover;
+}
+
+.SeeMore-module__221lAG__card h2 {
+  margin-top: .5rem;
+  font-size: 1.25rem;
+}
+
+.SeeMore-module__221lAG__card p {
+  color: #555;
+  margin: .5rem 0;
+  font-size: .9rem;
+}
+
+/*# sourceMappingURL=src_components_SeeMore_SeeMore_module_css_e59ae46c._.single.css.map*/

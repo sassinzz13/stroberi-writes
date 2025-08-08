@@ -1,0 +1,15 @@
+/* [project]/src/components/TopBar/TopBar.module.css [app-client] (css) */
+.TopBar-module__stdOYq__topbar {
+  justify-content: center;
+  display: flex;
+}
+
+.TopBar-module__stdOYq__topbar h1 {
+  font-family: var(--font-playfair), serif;
+}
+
+.TopBar-module__stdOYq__logo {
+  margin-right: 15px;
+}
+
+/*# sourceMappingURL=src_components_TopBar_TopBar_module_css_e59ae46c._.single.css.map*/

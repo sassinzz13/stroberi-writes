@@ -1,0 +1,14 @@
+/* topbar starts here */
+.topbar{
+    display: flex;
+    justify-content: center;
+}
+.topbar h1 {
+  font-family: var(--font-playfair), serif;
+}
+/* Topbar ends here */
+
+/* logo starts here */
+.logo{
+    margin-right: 15px; 
+}

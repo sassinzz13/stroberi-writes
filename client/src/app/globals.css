@@ -1,0 +1,25 @@
+/* Reset some default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body-wide font and background */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FFD1DF;
+  color: #212529;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set up CSS variables (optional) */
+:root {
+  --primary-color: #0070f3;
+  --font-size-base: 16px;
+}

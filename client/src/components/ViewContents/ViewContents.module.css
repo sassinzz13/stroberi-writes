@@ -1,0 +1,55 @@
+/* centers the entire view vertically & horizontally */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+
+}
+
+/* content box */
+.articleContainer {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+/* heading */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: "Arial", sans-serif;
+  color: #222;
+}
+
+/* image container, centered */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Next.js Image */
+.image {
+  object-fit: cover;
+}
+
+/* content paragraphs */
+.articleContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+}
+
+
+

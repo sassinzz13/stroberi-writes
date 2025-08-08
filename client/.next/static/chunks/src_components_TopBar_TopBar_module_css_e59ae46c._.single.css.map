@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/TopBar/TopBar.module.css"],"sourcesContent":["/* topbar starts here */\n.topbar{\n    display: flex;\n    justify-content: center;\n}\n.topbar h1 {\n  font-family: var(--font-playfair), serif;\n}\n/* Topbar ends here */\n\n/* logo starts here */\n.logo{\n    margin-right: 15px; \n}"],"names":[],"mappings":"AACA;;;;;AAIA;;;;AAMA"}}]
+}

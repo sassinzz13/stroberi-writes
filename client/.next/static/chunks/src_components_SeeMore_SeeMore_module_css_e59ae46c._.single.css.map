@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/SeeMore/SeeMore.module.css"],"sourcesContent":[".home {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 2rem;\n  font-family: \"Arial\", sans-serif;\n}\n\n.home h1 {\n  font-size: 2.5rem;\n  margin-bottom: 2rem;\n}\n\n/* layout grid */\n.grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: 2rem;\n}\n\n/* cards */\n.card {\n  background-color: #f9f9f9;\n  padding: 1rem;\n  border-radius: 10px;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n  transition: transform 0.2s ease-in-out;\n  cursor: pointer;\n}\n\n.card:hover {\n  transform: scale(1.02);\n}\n\n/* image inside card */\n.imageWrapper {\n  position: relative;\n  width: 100%;\n  aspect-ratio: 5 / 3;\n  overflow: hidden;\n  border-radius: 8px;\n}\n\n.image {\n  object-fit: cover;\n}\n\n/* title and text */\n.card h2 {\n  font-size: 1.25rem;\n  margin-top: 0.5rem;\n}\n\n.card p {\n  color: #555;\n  margin: 0.5rem 0;\n  font-size: 0.9rem;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;AAOA;;;;;AAMA;;;;;;AAOA;;;;;;;;;AASA;;;;AAKA;;;;;;;;AAQA;;;;AAKA;;;;;AAKA"}}]
+}

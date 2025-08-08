@@ -1,0 +1,97 @@
+/* centers everything */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start; /* changed from center */
+  padding: 5rem 1rem 2rem; /* more top, less bottom */
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  
+}
+
+/* form card */
+.card {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  
+}
+
+/* title */
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Arial", sans-serif;
+  color: #222;
+}
+
+/* form fields */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+}
+
+.form input {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form input:focus {
+  border-color: #b00020;
+}
+
+/* login button */
+.button {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: #b00020;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #90001a;
+}
+
+/* footer text */
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.link {
+  color: #b00020;
+  font-weight: bold;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

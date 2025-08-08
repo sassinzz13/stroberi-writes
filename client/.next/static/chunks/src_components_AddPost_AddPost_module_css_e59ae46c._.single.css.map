@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/AddPost/AddPost.module.css"],"sourcesContent":[".addPostContainer {\n  max-width: 800px;\n  margin: 3rem auto;\n  padding: 3rem;\n  border-radius: 12px;\n  background-color: #fdfdfd;\n  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);\n}\n\n\n.form {\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n}\n\n.input {\n  padding: 0.75rem 1rem;\n  border: 1px solid #ccc;\n  border-radius: 8px;\n  font-size: 1rem;\n}\n\n.textarea {\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 8px;\n  font-size: 1rem;\n  resize: vertical;\n  min-height: 200px;\n}\n\n.submitBtn {\n  padding: 0.75rem 1rem;\n  background-color: #b00020;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  font-size: 1rem;\n  cursor: pointer;\n  transition: background-color 0.3s ease;\n}\n\n.submitBtn:hover {\n  background-color: #8c001a;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;AAUA;;;;;;AAMA;;;;;;;AAOA;;;;;;;;;AASA;;;;;;;;;;;AAWA"}}]
+}

@@ -1,0 +1,80 @@
+/* container of the entire home page */
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Arial", sans-serif;
+}
+
+/* see more at the bottom right */
+.seeMore {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* see more hover effect */
+.seeMore:hover {
+  color: #b00020;
+  text-decoration: underline;
+}
+
+/* controls the h1 of the home */
+.home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* converts the entire home page into a grid that repeats 3 contents  */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* the card container */
+.card {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* the card animation */
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* the image container */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* converts image to fit the entire card */
+.image {
+  object-fit: cover;
+}
+
+/* the h2 in the card */
+.card h2 {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+/* the p in the card */
+.card p {
+  color: #555;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}

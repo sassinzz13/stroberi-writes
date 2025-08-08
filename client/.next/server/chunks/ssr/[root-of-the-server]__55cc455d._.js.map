@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 17, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/TopBar/TopBar.module.css [app-rsc] (css module)"],"sourcesContent":["__turbopack_context__.v({\n  \"logo\": \"TopBar-module__stdOYq__logo\",\n  \"topbar\": \"TopBar-module__stdOYq__topbar\",\n});\n"],"names":[],"mappings":"AAAA;AACA;AACA;AACA"}},
+    {"offset": {"line": 25, "column": 0}, "map": {"version":3,"sources":["file:///home/sassinzz13/programming/insight-lounge/client/src/components/TopBar/TopBar.jsx"],"sourcesContent":["import React from \"react\";\nimport styles from \"../TopBar/TopBar.module.css\";\nimport Image from \"next/image\";\n\nconst TopBar = () => {\n  return (\n    <div className={styles.topbar}>\n      <Image\n        src=\"/logo.svg\"\n        alt=\"Site Logo\"\n        width={40}\n        height={40}\n        className={styles.logo}\n      />\n      <h1>Insight-Lounge</h1>\n    </div>\n  );\n};\n\nexport default TopBar;\n"],"names":[],"mappings":";;;;AAAA;AACA;AACA;;;;;AAEA,MAAM,SAAS;IACb,qBACE,8OAAC;QAAI,WAAW,iJAAA,CAAA,UAAM,CAAC,MAAM;;0BAC3B,8OAAC,6HAAA,CAAA,UAAK;gBACJ,KAAI;gBACJ,KAAI;gBACJ,OAAO;gBACP,QAAQ;gBACR,WAAW,iJAAA,CAAA,UAAM,CAAC,IAAI;;;;;;0BAExB,8OAAC;0BAAG;;;;;;;;;;;;AAGV;uCAEe","debugId":null}}]
+}

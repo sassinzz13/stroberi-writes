@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/NavBar/NavBar.module.css"],"sourcesContent":[".navbar {\n  width: 100%;\n  height: 50px;\n  background-color: #FFB5C0;\n  display: flex;               /* Enable flexbox */\n  align-items: center;         /* Vertically center all items */\n  justify-content: center; /* Space between menu and search */\n  padding: 0 1rem;             /* Horizontal padding */\n  box-sizing: border-box;      /* Include padding in width */\n  gap: 2rem;\n}\n\n.navbar p {\n    color: black;\n    font-weight: lighter;\n}\n\n.navbarContent {\n  display: flex;\n  gap: 3rem;  /* spacing between menu items */\n}\n\n.navbarItem {\n  color: black;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: bold;\n  cursor: pointer;\n  transition: color 0.3s ease;\n  margin: 0;\n}\n\n.navbarItem:hover {\n  color: #B00020;\n  text-decoration: underline;\n}\n\n\n.navbarSearch {\n  padding: 6px 12px;\n  border-radius: 4px;\n  border: none;\n  font-size: 14px;\n  outline: none;\n  width: 180px;\n  transition: width 0.3s ease;\n  background-color: white;\n  color: black;\n}\n\n.navbarSearch:focus {\n  width: 220px;\n}\n\n\n"],"names":[],"mappings":"AAAA;;;;;;;;;;;;AAYA;;;;;AAKA;;;;;AAKA;;;;;;;;;AASA;;;;;AAMA;;;;;;;;;;;;AAYA"}}]
+}

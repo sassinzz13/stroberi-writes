@@ -1,0 +1,46 @@
+.addPostContainer {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 3rem;
+  border-radius: 12px;
+  background-color: #fdfdfd;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 200px;
+}
+
+.submitBtn {
+  padding: 0.75rem 1rem;
+  background-color: #b00020;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #8c001a;
+}
