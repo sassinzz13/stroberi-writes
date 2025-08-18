@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "../Home/Home.module.css";
 import Link from "next/link";
 import parse from "html-react-parser";
-
+import { BACKEND_URL } from "@/config";
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,7 +14,7 @@ const Home = () => {
   const fetchPosts = async (page = 1) => {
     setLoading(true);
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/blog/posts/?page=${page}`);
+      const res = await fetch(`${BACKEND_URL}/api/blog/posts/?page=${page}`);
       if (!res.ok) throw new Error("Failed to fetch posts");
       const data = await res.json();
       setPosts(data.posts || []);          // <-- use 'posts' key
