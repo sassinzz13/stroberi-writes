@@ -1,6 +1,6 @@
 'use client';
 import React, { createContext, useState, useEffect } from "react";
-
+import { BACKEND_URL } from "@/config";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     if (token) {
       setIsLoggedIn(true);
 
-      fetch("http://127.0.0.1:8000/api/auth/protected/", {
+      fetch(`${BACKEND_URL}/api/auth/protected/`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then(res => res.json())
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("refreshToken", refresh);
     setIsLoggedIn(true);
 
-    fetch("http://127.0.0.1:8000/api/auth/protected/", {
+    fetch(`${BACKEND_URL}/api/auth/protected/`, {
       headers: { Authorization: `Bearer ${access}` },
     })
       .then(res => res.json())
