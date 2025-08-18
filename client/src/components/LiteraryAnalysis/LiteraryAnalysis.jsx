@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../Home/Home.module.css";
 import Link from "next/link";
 import { BACKEND_URL } from "@/config";
+import parse from "html-react-parser";
 const LiteraryAnalysis = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -69,7 +70,13 @@ const LiteraryAnalysis = () => {
                   </div>
                   <p>{date.toDateString()}</p>
                   <h2>{post.title}</h2>
-                  <p>{post.body}</p>
+                  <p>{post.body ? (
+                      <span>
+                        {parse(post.body.replace(/<[^>]+>/g, "").slice(0, 150))}...
+                      </span>
+                    ) : (
+                      <p>No content available.</p>
+                    )}</p>
                   <p>{post.tags.map((tag) => tag).join(", ")}</p>
                 </Link>
               );
