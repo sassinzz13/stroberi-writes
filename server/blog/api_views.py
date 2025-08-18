@@ -43,12 +43,15 @@ def get_post_list_api(request, tag_slug=None):
 # allows us to get the detail of the post
 @api_view(['GET'])
 def get_post_detail_api(request, year, month, day, slug):
+    # Define start and end of the day in UTC to avoid timezone issues
+    start = datetime(int(year), int(month), int(day), 0, 0, 0, tzinfo=timezone.utc)
+    end = start + timedelta(days=1)
+
     post_obj = get_object_or_404(
         Post.published.prefetch_related('tags', 'comments').select_related('author'),
         slug=slug,
-        publish__year=year,
-        publish__month=month,
-        publish__day=day
+        publish__gte=start,
+        publish__lt=end
     )
 
     comments = post_obj.comments.filter(active=True)
