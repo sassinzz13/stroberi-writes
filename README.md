@@ -9,4 +9,5 @@ stroberi-writes is a modern, full-stack blog platform built with Next.js on the 
 
 # DONE  
 My very first blog app to learn about web development  
-seeked help through chatGPT to learn proper ways of developing it
+seeked help through chatGPT to learn proper ways of developing it  
+I dedicate this app to my girlfriend who requested it. Thanks for inspiring me to pursue my IT career.
