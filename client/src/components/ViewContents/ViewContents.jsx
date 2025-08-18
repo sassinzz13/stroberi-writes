@@ -6,6 +6,7 @@ import { AuthContext } from "@/context/AuthContext";
 import { useParams, useRouter } from "next/navigation";
 import parse from "html-react-parser";
 import "quill/dist/quill.snow.css";
+import { BACKEND_URL } from "@/config";
 
 const ViewContents = () => {
   const { year, month, day, slug } = useParams();
@@ -26,7 +27,7 @@ const ViewContents = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const url = `http://127.0.0.1:8000/api/blog/posts/${year}/${month}/${day}/${slug}/`;
+        const url = `${BACKEND_URL}/api/blog/posts/${year}/${month}/${day}/${slug}/`;
         const res = await fetch(url);
         if (!res.ok) throw new Error(`Failed to fetch post: ${res.status}`);
         const data = await res.json();
@@ -52,7 +53,7 @@ const ViewContents = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/blog/posts/${post.id}/comment/`,
+        `${BACKEND_URL}/api/blog/posts/${post.id}/comment/`,
         {
           method: "POST",
           headers: {
@@ -84,7 +85,7 @@ const ViewContents = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/blog/comments/${commentId}/edit/`,
+        `${BACKEND_URL}/api/blog/comments/${commentId}/edit/`,
         {
           method: "PUT",
           headers: {
@@ -110,7 +111,7 @@ const ViewContents = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/blog/comments/${commentId}/delete/`,
+        `${BACKEND_URL}/api/blog/comments/${commentId}/delete/`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
@@ -129,7 +130,7 @@ const ViewContents = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/blog/posts/${post.id}/delete/`,
+        `${BACKEND_URL}/api/blog/posts/${post.id}/delete/`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
