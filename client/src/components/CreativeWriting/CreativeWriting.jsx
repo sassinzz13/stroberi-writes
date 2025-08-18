@@ -69,7 +69,13 @@ const CreativeWriting = () => {
                   </div>
                   <p>{date.toDateString()}</p>
                   <h2>{post.title}</h2>
-                  <p>{post.body}</p>
+                  <p>{post.body ? (
+                    <span>
+                      {parse(post.body.replace(/<[^>]+>/g, "").slice(0, 150))}...
+                    </span>
+                  ) : (
+                    <p>No content available.</p>
+                  )}</p>
                   <p>{post.tags.map((tag) => tag).join(", ")}</p>
                 </Link>
               );
