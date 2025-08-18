@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../Home/Home.module.css";
 import Link from "next/link";
-
+import { BACKEND_URL } from "@/config";
 const CreativeWriting = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
