@@ -64,58 +64,24 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$Home$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/Home/Home.module.css [app-rsc] (css module)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$Home$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/Home/Home.module.css [app-rsc] (css module)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-rsc] (ecmascript)");
 ;
 ;
 ;
 ;
-// dummy blog posts
-const blogPosts = [
-    {
-        title: "Eminem",
-        image: "/em.jpg",
-        date: "Aug 5, 2025",
-        description: "F*** you debbie!!!!",
-        category: "Creative Writing"
-    },
-    {
-        title: "Space Invaders",
-        image: "/space.jpg",
-        date: "Aug 3, 2025",
-        description: "Final boss.",
-        category: "Poems"
-    },
-    {
-        title: "Lion King",
-        image: "/simba.jpg",
-        date: "Aug 1, 2025",
-        description: "Circle of life.",
-        category: "Short Stories"
-    },
-    {
-        title: "P.I.M.P",
-        image: "/50cent.jpeg",
-        date: "Aug 1, 2025",
-        description: "No cadillacs no perms you can see.",
-        category: "LIterary Analysis"
-    },
-    {
-        title: "Voom Voom cfmoto Voom",
-        image: "/voom.jpg",
-        date: "Aug 1, 2025",
-        description: "Classic motorcycle by cfmoto",
-        category: "Poems"
-    },
-    {
-        title: "Tmax",
-        image: "/tmax.jpg",
-        date: "Aug 1, 2025",
-        description: "Broom.",
-        category: "Poems"
-    }
-];
-const Home = ()=>{
+;
+async function getPosts() {
+    const res = await fetch("http://127.0.0.1:8000/api/blog/posts/", {
+        cache: "no-store"
+    });
+    if (!res.ok) throw new Error("Failed to fetch posts");
+    return res.json();
+}
+const Home = async ()=>{
+    const data = await getPosts();
+    const posts = data.posts;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$Home$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].home,
         children: [
@@ -123,68 +89,76 @@ const Home = ()=>{
                 children: "Latest Contents"
             }, void 0, false, {
                 fileName: "[project]/src/components/Home/Home.jsx",
-                lineNumber: 54,
+                lineNumber: 20,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$Home$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].grid,
-                children: blogPosts.map((post, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: posts.map((post)=>{
+                    // Extract year, month, day from the publish date
+                    const date = new Date(post.publish); // or post.date if that’s what you have
+                    const year = date.getFullYear();
+                    const month = String(date.getMonth() + 1).padStart(2, "0");
+                    const day = String(date.getDate()).padStart(2, "0");
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                        href: `/viewcontent/${year}/${month}/${day}/${post.slug}`,
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$Home$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].card,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$Home$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].imageWrapper,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: post.image,
-                                    alt: post.title,
+                                    src: post.image ? `https://res.cloudinary.com/dwdhdzva8/${post.image}` : "/STRAWBERRY.png",
+                                    alt: post.title || "Post image",
                                     fill: true,
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$Home$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].image
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Home/Home.jsx",
-                                    lineNumber: 60,
-                                    columnNumber: 15
+                                    lineNumber: 36,
+                                    columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Home/Home.jsx",
-                                lineNumber: 59,
-                                columnNumber: 13
+                                lineNumber: 35,
+                                columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                children: post.date
+                                children: date.toDateString()
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Home/Home.jsx",
-                                lineNumber: 67,
-                                columnNumber: 13
+                                lineNumber: 47,
+                                columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: post.title
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Home/Home.jsx",
-                                lineNumber: 68,
-                                columnNumber: 13
+                                lineNumber: 48,
+                                columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: post.description
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Home/Home.jsx",
-                                lineNumber: 69,
-                                columnNumber: 13
+                                lineNumber: 49,
+                                columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: post.category
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Home/Home.jsx",
-                                lineNumber: 70,
-                                columnNumber: 13
+                                lineNumber: 50,
+                                columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
-                    }, index, true, {
+                    }, post.id, true, {
                         fileName: "[project]/src/components/Home/Home.jsx",
-                        lineNumber: 58,
-                        columnNumber: 11
-                    }, ("TURBOPACK compile-time value", void 0)))
+                        lineNumber: 30,
+                        columnNumber: 13
+                    }, ("TURBOPACK compile-time value", void 0));
+                })
             }, void 0, false, {
                 fileName: "[project]/src/components/Home/Home.jsx",
-                lineNumber: 55,
+                lineNumber: 21,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -193,18 +167,18 @@ const Home = ()=>{
                     children: "See more..."
                 }, void 0, false, {
                     fileName: "[project]/src/components/Home/Home.jsx",
-                    lineNumber: 75,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Home/Home.jsx",
-                lineNumber: 74,
+                lineNumber: 55,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Home/Home.jsx",
-        lineNumber: 53,
+        lineNumber: 19,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -538,9 +512,9 @@ const page = ()=>{
                 lineNumber: 15,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ViewContents$2f$ViewContents$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$Home$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 17,
+                lineNumber: 16,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]

@@ -556,12 +556,77 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ViewContents$2f$ViewContents$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/ViewContents/ViewContents.module.css [app-client] (css module)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 ;
 ;
 const ViewContents = ()=>{
+    _s();
+    const { year, month, day, slug } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])();
+    const [post, setPost] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ViewContents.useEffect": ()=>{
+            const fetchPost = {
+                "ViewContents.useEffect.fetchPost": async ()=>{
+                    try {
+                        const url = "http://127.0.0.1:8000/api/blog/posts/".concat(year, "/").concat(month, "/").concat(day, "/").concat(slug, "/");
+                        console.log("Fetching post from URL:", url);
+                        const res = await fetch(url);
+                        if (!res.ok) throw new Error("Failed to fetch post: ".concat(res.status));
+                        const data = await res.json();
+                        console.log("Fetched data:", data);
+                        // The API nests the post inside 'post'
+                        if (data.post) {
+                            setPost(data.post);
+                        } else {
+                            setError("Post data not found in response");
+                        }
+                    } catch (err) {
+                        console.error(err);
+                        setError(err.message);
+                    } finally{
+                        setLoading(false);
+                    }
+                }
+            }["ViewContents.useEffect.fetchPost"];
+            fetchPost();
+        }
+    }["ViewContents.useEffect"], [
+        year,
+        month,
+        day,
+        slug
+    ]);
+    if (loading) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+        children: "Loading..."
+    }, void 0, false, {
+        fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
+        lineNumber: 42,
+        columnNumber: 23
+    }, ("TURBOPACK compile-time value", void 0));
+    if (error) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+        children: [
+            "Error: ",
+            error
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
+        lineNumber: 43,
+        columnNumber: 21
+    }, ("TURBOPACK compile-time value", void 0));
+    if (!post) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+        children: "Post not found"
+    }, void 0, false, {
+        fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
+        lineNumber: 44,
+        columnNumber: 21
+    }, ("TURBOPACK compile-time value", void 0));
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ViewContents$2f$ViewContents$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].wrapper,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -569,73 +634,68 @@ const ViewContents = ()=>{
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ViewContents$2f$ViewContents$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].title,
-                    children: "The Beauty of Simplicity"
+                    children: post.title
                 }, void 0, false, {
                     fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-                    lineNumber: 10,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                post.image && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ViewContents$2f$ViewContents$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].imageWrapper,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        src: "/em.jpg",
-                        alt: "Banner",
+                        src: "https://res.cloudinary.com/dwdhdzva8/".concat(post.image),
+                        alt: post.title,
                         fill: true,
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ViewContents$2f$ViewContents$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].image,
                         sizes: "(max-width: 1200px) 100vw, 1200px",
                         priority: true
                     }, void 0, false, {
                         fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-                        lineNumber: 13,
-                        columnNumber: 11
+                        lineNumber: 53,
+                        columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-                    lineNumber: 12,
-                    columnNumber: 9
+                    lineNumber: 52,
+                    columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ViewContents$2f$ViewContents$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].articleContent,
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            children: "In today's fast-paced digital world, it's easy to get caught up in the chaos. But there's something deeply powerful about simplicity — in design, in writing, and in life."
-                        }, void 0, false, {
+                    children: post.body ? post.body.split("\n\n").map((paragraph, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            children: paragraph
+                        }, idx, false, {
                             fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-                            lineNumber: 24,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            children: "Embracing minimalism doesn’t mean removing all complexity, but rather focusing only on what matters. A well-crafted article doesn’t need to shout. It whispers meaningfully."
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-                            lineNumber: 28,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            children: "Whether you're designing a product or writing a blog, remember: Simplicity is not a lack of content — it's clarity of purpose."
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-                            lineNumber: 32,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
+                            lineNumber: 67,
+                            columnNumber: 17
+                        }, ("TURBOPACK compile-time value", void 0))) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        children: "No content available."
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
+                        lineNumber: 69,
+                        columnNumber: 15
+                    }, ("TURBOPACK compile-time value", void 0))
+                }, void 0, false, {
                     fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-                    lineNumber: 23,
+                    lineNumber: 64,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-            lineNumber: 9,
+            lineNumber: 48,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/ViewContents/ViewContents.jsx",
-        lineNumber: 8,
+        lineNumber: 47,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
+_s(ViewContents, "isawClEFZSm9+QbQP+6JPQ43XeY=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"]
+    ];
+});
 _c = ViewContents;
 const __TURBOPACK__default__export__ = ViewContents;
 var _c;

@@ -44,3 +44,65 @@
 .submitBtn:hover {
   background-color: #8c001a;
 }
+/* Toolbar container */
+.toolbar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+/* Toolbar buttons */
+.toolbar button {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Hover state */
+.toolbar button:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Active state (when formatting is on) */
+.activeBtn {
+  background: #2563eb; /* blue */
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* Editor container */
+.editorContainer {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: #ffffff;
+}
+
+/* Editor content area */
+.editor {
+  min-height: 200px;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Placeholder style */
+.editor p.is-editor-empty:first-child::before {
+  color: #9ca3af;
+  content: "Start writing your story...";
+  float: left;
+  height: 0;
+  pointer-events: none;
+}

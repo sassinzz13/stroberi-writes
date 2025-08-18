@@ -1,79 +1,113 @@
-import React from "react";
-import styles from "../Home/Home.module.css";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
-// dummy blog posts
-const blogPosts = [
-  {
-    title: "Eminem",
-    image: "/em.jpg",
-    date: "Aug 5, 2025",
-    description: "F*** you debbie!!!!",
-    category: "Creative Writing",
-  },
-  {
-    title: "Space Invaders",
-    image: "/space.jpg",
-    date: "Aug 3, 2025",
-    description: "Final boss.",
-    category: "Poems",
-  },
-  {
-    title: "Lion King",
-    image: "/simba.jpg",
-    date: "Aug 1, 2025",
-    description: "Circle of life.",
-    category: "Short Stories",
-  },
-  {
-    title: "P.I.M.P",
-    image: "/50cent.jpeg",
-    date: "Aug 1, 2025",
-    description: "No cadillacs no perms you can see.",
-    category: "LIterary Analysis",
-  },
-  {
-    title: "Voom Voom cfmoto Voom",
-    image: "/voom.jpg",
-    date: "Aug 1, 2025",
-    description: "Classic motorcycle by cfmoto",
-    category: "Poems",
-  },
-  {
-    title: "Tmax",
-    image: "/tmax.jpg",
-    date: "Aug 1, 2025",
-    description: "Broom.",
-    category: "Poems",
-  },
-];
+import styles from "../Home/Home.module.css";
+import Link from "next/link";
+import parse from "html-react-parser";
 
 const Home = () => {
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const fetchPosts = async (page = 1) => {
+    setLoading(true);
+    try {
+      const res = await fetch(`http://127.0.0.1:8000/api/blog/posts/?page=${page}`);
+      if (!res.ok) throw new Error("Failed to fetch posts");
+      const data = await res.json();
+      setPosts(data.posts || []);          // <-- use 'posts' key
+      setTotalPages(data.total_pages || 1); // <-- total_pages from API
+      setCurrentPage(data.current_page || 1);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts(currentPage);
+  }, [currentPage]);
+
+  const handlePageClick = (page) => setCurrentPage(page);
+
   return (
     <div className={styles.home}>
       <h1>Latest Contents</h1>
-      <div className={styles.grid}>
-        {/* javascript map logic for indexing dummy jsons */}
-        {blogPosts.map((post, index) => (
-          <div className={styles.card} key={index}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                className={styles.image}
-              />
-            </div>
-            <p>{post.date}</p>
-            <h2>{post.title}</h2>
-            <p>{post.description}</p>
-            <p>{post.category}</p>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <div className={styles.grid}>
+            {posts.map((post) => {
+              const date = new Date(post.publish);
+              const year = date.getFullYear();
+              const month = String(date.getMonth() + 1).padStart(2, "0");
+              const day = String(date.getDate()).padStart(2, "0");
+
+              return (
+                <Link
+                  href={`/viewcontent/${year}/${month}/${day}/${post.slug}`}
+                  key={post.id}
+                  className={styles.card}
+                >
+                  <div className={styles.imageWrapper}>
+                    <Image
+                      src={
+                        post.image
+                          ? `https://res.cloudinary.com/dwdhdzva8/${post.image}`
+                          : "/STRAWBERRY.png"
+                      }
+                      alt={post.title || "Post image"}
+                      fill
+                      className={styles.image}
+                    />
+                  </div>
+                  <p>{date.toDateString()}</p>
+                  <h2>{post.title}</h2>
+                  <p>{post.body ? (
+    <span>
+      {parse(post.body.replace(/<[^>]+>/g, "").slice(0, 150))}...
+    </span>
+  ) : (
+    <p>No content available.</p>
+  )}</p>
+                  <p>{post.tags.map(tag => tag).join(", ")}</p>
+                </Link>
+              );
+            })}
           </div>
-        ))}
-      </div>
-      <div className={styles.seeMore}>
-        <p>See more...</p>
-      </div>
+
+          {/* Pagination */}
+          <div className={styles.pagination}>
+            <button
+              onClick={() => currentPage > 1 && handlePageClick(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              &lt;
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i + 1}
+                onClick={() => handlePageClick(i + 1)}
+                className={currentPage === i + 1 ? styles.activePage : ""}
+              >
+                {i + 1}
+              </button>
+            ))}
+
+            <button
+              onClick={() => currentPage < totalPages && handlePageClick(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              &gt;
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

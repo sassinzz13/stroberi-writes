@@ -52,3 +52,92 @@
 }
 
 
+.searchDropdown {
+  position: absolute;
+  top: 110%; /* just below the search input */
+  left: 0;
+  width: 100%;
+  background: #ffffff; /* white background */
+  color: #111827; /* dark text */
+  border-radius: 0.375rem; /* rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  max-height: 250px; /* limit height */
+  overflow-y: auto; /* scroll if too tall */
+  z-index: 10;
+}
+
+.searchDropdownItem {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.searchDropdownItem:hover {
+  background-color: #e5e7eb; /* light gray highlight on hover */
+}
+
+
+.searchContainer {
+  position: relative; /* important for dropdown to appear below input */
+  width: 200px; /* adjust to match input width */
+}
+
+/* =================== MOBILE RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .navbarContent {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .navbarItem {
+    font-size: 0.9rem;
+  }
+
+  .navbarSearch {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .searchContainer {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .searchDropdown {
+    max-height: 200px;
+  }
+}
+
+/* =================== BURGER MENU =================== */
+.burgerIcon {
+  display: none; /* hide on desktop */
+  cursor: pointer;
+  color: black;
+}
+
+/* Show burger icon on mobile */
+@media (max-width: 768px) {
+  .burgerIcon {
+    display: block;
+  }
+
+  .navbarContent {
+    display: none; /* hide nav items initially on mobile */
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbarContent.navOpen {
+    display: flex; /* show nav items when burger is clicked */
+  }
+}

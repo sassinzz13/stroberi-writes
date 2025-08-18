@@ -78,3 +78,71 @@
   margin: 0.5rem 0;
   font-size: 0.9rem;
 }
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination .activePage {
+  background-color: #b00020;
+  color: white;
+  border-color: #b00020;
+}
+
+/* =================== MOBILE RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .home {
+    padding: 1rem;
+  }
+
+  .home h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .pagination button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}

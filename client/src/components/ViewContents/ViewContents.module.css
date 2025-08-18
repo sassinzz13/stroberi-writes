@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   padding: 4rem 1rem;
-
 }
 
 /* content box */
@@ -48,8 +47,345 @@
   color: #444;
   margin-bottom: 1.2rem;
   font-family: "Open Sans", sans-serif;
-  text-align: justify;
+  text-align: center;
 }
 
+/* ======= SINGLE COMMENT ======= */
+.comment {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  position: relative;
+  transition: background 0.2s ease;
+  text-align: left; /* Make text left-aligned */
+}
 
+.comment:hover {
+  background-color: #f6f6f6;
+}
 
+/* ======= AUTHOR AND TIMESTAMP ======= */
+.commentAuthor {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #0079d3; /* Reddit-blue for author */
+  margin-bottom: 0.25rem;
+}
+
+.commentTime {
+  font-size: 0.75rem;
+  color: #888;
+  margin-left: 0.25rem;
+}
+
+/* ======= COMMENT BODY ======= */
+.comment p {
+  margin: 0.2rem 0;
+  font-size: 0.875rem;
+  color: #1c1c1c;
+  line-height: 1.3rem;
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+/* ======= COMMENT ACTIONS (Edit/Delete) ======= */
+.commentActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: flex-end; /* move buttons to far right */
+}
+
+.commentActions button {
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: transparent;
+}
+
+.commentActions button.edit {
+  color: #0079d3;
+}
+
+.commentActions button.edit:hover {
+  text-decoration: underline;
+}
+
+.commentActions button.delete {
+  color: #ff4500;
+}
+
+.commentActions button.delete:hover {
+  text-decoration: underline;
+}
+
+/* ======= EDIT TEXTAREA ======= */
+.editTextarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  margin-top: 0.5rem;
+  resize: vertical;
+}
+
+/* ======= COMMENT FORM ======= */
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.commentForm textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.commentForm button {
+  align-self: flex-end;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  color: #fff;
+  background-color: #0079d3;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.commentForm button:hover {
+  background-color: #005999;
+}
+
+.commentForm button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ======= INDENTED REPLIES (optional) ======= */
+.comment .replies {
+  margin-left: 2rem;
+  border-left: 2px solid #ddd;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Post edit/delete buttons */
+.articleActions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.editButton {
+  background-color: #4caf50; /* green */
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.editButton:hover {
+  background-color: #45a049;
+}
+
+.deleteButton {
+  background-color: #f44336; /* red */
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+/* Comment edit/delete buttons */
+.commentActions {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.commentActions .editButton,
+.commentActions .deleteButton {
+  padding: 4px 10px;
+  font-size: 0.85rem;
+}
+
+/* Quill-like minimal styles for viewing */
+.ql-editor {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.ql-editor h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.ql-editor h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.75rem 0;
+}
+
+.ql-editor p {
+  margin: 0.5rem 0;
+}
+
+.ql-editor strong {
+  font-weight: bold;
+}
+
+.ql-editor em {
+  font-style: italic;
+}
+
+.ql-editor ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.ql-editor ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.ql-editor li {
+  margin: 0.25rem 0;
+}
+
+/* paragraphs */
+.articleContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+/* ordered & unordered lists */
+.articleContent ol,
+.articleContent ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem; /* smaller indentation */
+  list-style-position: inside; /* ✅ numbers/bullets sit inside like text */
+}
+
+.articleContent li {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  font-family: "Open Sans", sans-serif;
+}
+
+.articleContent img,
+.ql-editor img {
+  max-width: 100%; /* prevents it from overflowing */
+  height: auto;    /* keeps aspect ratio */
+  display: block;  /* avoids inline spacing issues */
+  margin: 1rem auto; /* optional: center the image with spacing */
+}
+
+/* =================== MOBILE RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .articleContainer {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .articleContent p,
+  .articleContent li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 16 / 9; /* slightly taller for mobile */
+    margin-bottom: 1.5rem;
+  }
+
+  /* Article actions buttons */
+  .articleActions {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+    align-items: stretch;
+  }
+
+  .editButton,
+  .deleteButton {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 0.9rem;
+  }
+
+  /* Comment form */
+  .commentForm textarea {
+    min-height: 60px;
+  }
+
+  .commentForm button {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  /* Single comment adjustments */
+  .comment {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .commentActions {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .commentActions .editButton,
+  .commentActions .deleteButton {
+    width: 100%;
+    padding: 4px 0;
+    font-size: 0.8rem;
+  }
+
+  /* Quill content adjustments */
+  .ql-editor h1 {
+    font-size: 1.6rem;
+  }
+
+  .ql-editor h2 {
+    font-size: 1.3rem;
+  }
+}

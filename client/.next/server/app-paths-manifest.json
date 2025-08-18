@@ -1,4 +1,8 @@
 {
+  "/creative-writing/page": "app/creative-writing/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/register/page": "app/register/page.js",
+  "/viewcontent/[year]/[month]/[day]/[slug]/page": "app/viewcontent/[year]/[month]/[day]/[slug]/page.js"
 }

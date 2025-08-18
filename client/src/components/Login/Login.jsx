@@ -1,26 +1,61 @@
-"use client";
-import React, { useState } from "react";
+'use client'
+import React, { useState, useContext } from "react";
+import { AuthContext } from "@/context/AuthContext";
 import styles from "../Login/Login.module.css";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/auth/login/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (!res.ok) throw new Error("Invalid credentials");
+      const data = await res.json();
+
+      // Update context
+      login(data.access, data.refresh);
+
+      // Redirect after login
+      router.push("/");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <h1 className={styles.title}>Welcome Back</h1>
-        <form className={styles.form}>
-          <label>Email</label>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label>Username</label>
           <input
-            type="email"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="your username"
             required
-            placeholder="you@example.com"
           />
 
           <label>Password</label>
           <input
             type="password"
-            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="enter password"
+            required
           />
 
           <button type="submit" className={styles.button}>
@@ -28,8 +63,17 @@ const Login = () => {
           </button>
         </form>
 
-        <p className={styles.footer}>
-          Don't have an account? <span className={styles.link}>Sign up</span>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+
+        <p style={{ marginTop: "1rem", textAlign: "center" }}>
+          Don't have an account?{" "}
+          <button
+            onClick={() => router.push("/register")}
+            className={styles.button}
+            style={{ padding: "0.5rem 1rem", fontSize: "0.9rem", cursor: "pointer" }}
+          >
+            Register
+          </button>
         </p>
       </div>
     </div>

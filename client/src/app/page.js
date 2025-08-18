@@ -11,10 +11,10 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-      <TopBar />
-      <NavBar />
-      {/* <Home /> */}
-      <ViewContents />
+      {/* <TopBar />
+      <NavBar /> */}
+      <Home />
+      {/* <ViewContents /> */}
       {/* <Login /> */}
       {/* <Signup /> */}
       {/* <SeeMore /> */}

@@ -1,0 +1,278 @@
+/* [project]/src/components/ViewContents/ViewContents.module.css [app-client] (css) */
+.ViewContents-module__FSKH0G__wrapper {
+  justify-content: center;
+  padding: 4rem 1rem;
+  display: flex;
+}
+
+.ViewContents-module__FSKH0G__articleContainer {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+}
+
+.ViewContents-module__FSKH0G__title {
+  color: #222;
+  margin-bottom: 2rem;
+  font-family: Arial, sans-serif;
+  font-size: 2.5rem;
+}
+
+.ViewContents-module__FSKH0G__imageWrapper {
+  aspect-ratio: 5 / 3;
+  border-radius: 8px;
+  width: 100%;
+  margin: 0 auto 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ViewContents-module__FSKH0G__image {
+  object-fit: cover;
+}
+
+.ViewContents-module__FSKH0G__comment {
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: .5rem;
+  flex-direction: column;
+  padding: .75rem 1rem;
+  transition: background .2s;
+  display: flex;
+  position: relative;
+}
+
+.ViewContents-module__FSKH0G__comment:hover {
+  background-color: #f6f6f6;
+}
+
+.ViewContents-module__FSKH0G__commentAuthor {
+  color: #0079d3;
+  margin-bottom: .25rem;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.ViewContents-module__FSKH0G__commentTime {
+  color: #888;
+  margin-left: .25rem;
+  font-size: .75rem;
+}
+
+.ViewContents-module__FSKH0G__comment p {
+  color: #1c1c1c;
+  text-align: left;
+  margin: .2rem 0;
+  font-size: .875rem;
+  line-height: 1.3rem;
+}
+
+.ViewContents-module__FSKH0G__commentActions {
+  justify-content: flex-end;
+  gap: .5rem;
+  margin-top: .5rem;
+  display: flex;
+}
+
+.ViewContents-module__FSKH0G__commentActions button {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-radius: .3rem;
+  padding: .25rem .5rem;
+  font-size: .75rem;
+  transition: all .2s;
+}
+
+.ViewContents-module__FSKH0G__commentActions button.ViewContents-module__FSKH0G__edit {
+  color: #0079d3;
+}
+
+.ViewContents-module__FSKH0G__commentActions button.ViewContents-module__FSKH0G__edit:hover {
+  text-decoration: underline;
+}
+
+.ViewContents-module__FSKH0G__commentActions button.ViewContents-module__FSKH0G__delete {
+  color: #ff4500;
+}
+
+.ViewContents-module__FSKH0G__commentActions button.ViewContents-module__FSKH0G__delete:hover {
+  text-decoration: underline;
+}
+
+.ViewContents-module__FSKH0G__editTextarea {
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: .3rem;
+  width: 100%;
+  min-height: 50px;
+  margin-top: .5rem;
+  padding: .5rem;
+}
+
+.ViewContents-module__FSKH0G__commentForm {
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.ViewContents-module__FSKH0G__commentForm textarea {
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: .3rem;
+  width: 100%;
+  min-height: 70px;
+  padding: .5rem;
+}
+
+.ViewContents-module__FSKH0G__commentForm button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #0079d3;
+  border: none;
+  border-radius: .3rem;
+  align-self: flex-end;
+  padding: .4rem .9rem;
+  font-size: .85rem;
+  transition: background .2s;
+}
+
+.ViewContents-module__FSKH0G__commentForm button:hover {
+  background-color: #005999;
+}
+
+.ViewContents-module__FSKH0G__commentForm button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.ViewContents-module__FSKH0G__comment .ViewContents-module__FSKH0G__replies {
+  border-left: 2px solid #ddd;
+  margin-top: .5rem;
+  margin-left: 2rem;
+  padding-left: 1rem;
+}
+
+.ViewContents-module__FSKH0G__articleActions {
+  gap: 10px;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.ViewContents-module__FSKH0G__editButton {
+  color: #fff;
+  cursor: pointer;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 500;
+  transition: background-color .2s;
+}
+
+.ViewContents-module__FSKH0G__editButton:hover {
+  background-color: #45a049;
+}
+
+.ViewContents-module__FSKH0G__deleteButton {
+  color: #fff;
+  cursor: pointer;
+  background-color: #f44336;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 500;
+  transition: background-color .2s;
+}
+
+.ViewContents-module__FSKH0G__deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+.ViewContents-module__FSKH0G__commentActions {
+  gap: 5px;
+  margin-top: 5px;
+  display: flex;
+}
+
+.ViewContents-module__FSKH0G__commentActions .ViewContents-module__FSKH0G__editButton, .ViewContents-module__FSKH0G__commentActions .ViewContents-module__FSKH0G__deleteButton {
+  padding: 4px 10px;
+  font-size: .85rem;
+}
+
+.ViewContents-module__FSKH0G__ql-editor {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.ViewContents-module__FSKH0G__ql-editor h1 {
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.ViewContents-module__FSKH0G__ql-editor h2 {
+  margin: .75rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ViewContents-module__FSKH0G__ql-editor p {
+  margin: .5rem 0;
+}
+
+.ViewContents-module__FSKH0G__ql-editor strong {
+  font-weight: bold;
+}
+
+.ViewContents-module__FSKH0G__ql-editor em {
+  font-style: italic;
+}
+
+.ViewContents-module__FSKH0G__ql-editor ol {
+  margin: .5rem 0;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.ViewContents-module__FSKH0G__ql-editor ul {
+  margin: .5rem 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.ViewContents-module__FSKH0G__ql-editor li {
+  margin: .25rem 0;
+}
+
+.ViewContents-module__FSKH0G__articleContent p {
+  color: #444;
+  text-align: left;
+  margin-bottom: 1.2rem;
+  font-family: Open Sans, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.ViewContents-module__FSKH0G__articleContent ol, .ViewContents-module__FSKH0G__articleContent ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style-position: inside;
+}
+
+.ViewContents-module__FSKH0G__articleContent li {
+  color: #444;
+  margin: .3rem 0;
+  font-family: Open Sans, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/*# sourceMappingURL=src_components_ViewContents_ViewContents_module_fa2a815b.css.map*/

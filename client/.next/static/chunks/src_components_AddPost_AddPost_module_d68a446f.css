@@ -1,0 +1,104 @@
+/* [project]/src/components/AddPost/AddPost.module.css [app-client] (css) */
+.AddPost-module__OQxqdq__addPostContainer {
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 3rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.AddPost-module__OQxqdq__form {
+  flex-direction: column;
+  gap: 1.5rem;
+  display: flex;
+}
+
+.AddPost-module__OQxqdq__input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  font-size: 1rem;
+}
+
+.AddPost-module__OQxqdq__textarea {
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-height: 200px;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.AddPost-module__OQxqdq__submitBtn {
+  color: #fff;
+  cursor: pointer;
+  background-color: #b00020;
+  border: none;
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  font-size: 1rem;
+  transition: background-color .3s;
+}
+
+.AddPost-module__OQxqdq__submitBtn:hover {
+  background-color: #8c001a;
+}
+
+.AddPost-module__OQxqdq__toolbar {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: .75rem;
+  padding: .5rem;
+  display: flex;
+}
+
+.AddPost-module__OQxqdq__toolbar button {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: .35rem .75rem;
+  font-size: .9rem;
+  font-weight: 500;
+  transition: all .15s ease-in-out;
+}
+
+.AddPost-module__OQxqdq__toolbar button:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.AddPost-module__OQxqdq__activeBtn {
+  color: #fff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.AddPost-module__OQxqdq__editorContainer {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: .5rem;
+}
+
+.AddPost-module__OQxqdq__editor {
+  outline: none;
+  min-height: 200px;
+  padding: .5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.AddPost-module__OQxqdq__editor p.AddPost-module__OQxqdq__is-editor-empty:first-child:before {
+  color: #9ca3af;
+  content: "Start writing your story...";
+  float: left;
+  pointer-events: none;
+  height: 0;
+}
+
+/*# sourceMappingURL=src_components_AddPost_AddPost_module_d68a446f.css.map*/

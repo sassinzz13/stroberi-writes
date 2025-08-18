@@ -1,0 +1,138 @@
+/* [project]/src/components/Home/Home.module.css [app-client] (css) */
+.Home-module__6XXAVq__home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.Home-module__6XXAVq__seeMore {
+  cursor: pointer;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  font-family: Open Sans, sans-serif;
+  font-weight: bold;
+  transition: color .3s;
+  display: flex;
+}
+
+.Home-module__6XXAVq__seeMore:hover {
+  color: #b00020;
+  text-decoration: underline;
+}
+
+.Home-module__6XXAVq__home h1 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.Home-module__6XXAVq__grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  display: grid;
+}
+
+.Home-module__6XXAVq__card {
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform .2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+}
+
+.Home-module__6XXAVq__card:hover {
+  transform: scale(1.02);
+}
+
+.Home-module__6XXAVq__imageWrapper {
+  aspect-ratio: 5 / 3;
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.Home-module__6XXAVq__image {
+  object-fit: cover;
+}
+
+.Home-module__6XXAVq__card h2 {
+  margin-top: .5rem;
+  font-size: 1.25rem;
+}
+
+.Home-module__6XXAVq__card p {
+  color: #555;
+  margin: .5rem 0;
+  font-size: .9rem;
+}
+
+.Home-module__6XXAVq__pagination {
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.Home-module__6XXAVq__pagination button {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: .5rem .75rem;
+}
+
+.Home-module__6XXAVq__pagination button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.Home-module__6XXAVq__pagination .Home-module__6XXAVq__activePage {
+  color: #fff;
+  background-color: #b00020;
+  border-color: #b00020;
+}
+
+@media (max-width: 768px) {
+  .Home-module__6XXAVq__home {
+    padding: 1rem;
+  }
+
+  .Home-module__6XXAVq__home h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .Home-module__6XXAVq__grid {
+    gap: 1rem;
+  }
+
+  .Home-module__6XXAVq__card {
+    padding: .75rem;
+  }
+
+  .Home-module__6XXAVq__card h2 {
+    font-size: 1.1rem;
+  }
+
+  .Home-module__6XXAVq__card p {
+    font-size: .85rem;
+  }
+
+  .Home-module__6XXAVq__imageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .Home-module__6XXAVq__pagination {
+    flex-wrap: wrap;
+    gap: .25rem;
+  }
+
+  .Home-module__6XXAVq__pagination button {
+    padding: .4rem .6rem;
+    font-size: .85rem;
+  }
+}
+
+/*# sourceMappingURL=src_components_Home_Home_module_3f186d2b.css.map*/
