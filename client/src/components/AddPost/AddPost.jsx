@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./AddPost.module.css";
 import "quill/dist/quill.snow.css";
-
+import { BACKEND_URL } from "@/config";
 const AddPost = () => {
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
