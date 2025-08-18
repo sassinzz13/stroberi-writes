@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import styles from "../AddPost/AddPost.module.css";
 import "quill/dist/quill.snow.css";
-
+import { BACKEND_URL } from "@/config";
 const EditPost = () => {
   const { year, month, day, slug } = useParams();
   const router = useRouter();
@@ -45,7 +45,7 @@ const EditPost = () => {
     const fetchPost = async () => {
       try {
         const res = await fetch(
-          `http://127.0.0.1:8000/api/blog/posts/${year}/${month}/${day}/${slug}/`
+          `${BACKEND_URL}/api/blog/posts/${year}/${month}/${day}/${slug}/`
         );
         if (!res.ok) throw new Error(`Failed to fetch post: ${res.status}`);
         const data = await res.json();
@@ -136,7 +136,7 @@ const EditPost = () => {
 
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/api/blog/posts/${postId}/edit/`,
+        `${BACKEND_URL}/api/blog/posts/${postId}/edit/`,
         {
           method: "PUT",
           headers: {
