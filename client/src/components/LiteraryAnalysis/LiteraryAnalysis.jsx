@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../Home/Home.module.css";
 import Link from "next/link";
-
+import { BACKEND_URL } from "@/config";
 const LiteraryAnalysis = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,7 +15,7 @@ const LiteraryAnalysis = () => {
     try {
       // Fetch only posts with the "creative-writing" tag
       const res = await fetch(
-        `http://127.0.0.1:8000/api/blog/posts/tag/literary-analysis/?page=${page}`
+        `${BACKEND_URL}/api/blog/posts/tag/literary-analysis/?page=${page}`
       );
       if (!res.ok) throw new Error("Failed to fetch posts");
       const data = await res.json();
