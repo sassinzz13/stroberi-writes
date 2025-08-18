@@ -2,6 +2,7 @@
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "@/context/AuthContext";
+import { BACKEND_URL } from "@/config";
 
 const ProtectedRoute = ({ children }) => {
   const { isLoggedIn, isSuperuser, loadingUser } = useContext(AuthContext);
