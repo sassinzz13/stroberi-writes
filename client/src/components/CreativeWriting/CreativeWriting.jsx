@@ -15,7 +15,7 @@ const CreativeWriting = () => {
     try {
       // Fetch only posts with the "creative-writing" tag
       const res = await fetch(
-        `http://127.0.0.1:8000/api/blog/posts/tag/creative-writing/?page=${page}`
+        `${BACKEND_URL}/api/blog/posts/tag/creative-writing/?page=${page}`
       );
       if (!res.ok) throw new Error("Failed to fetch posts");
       const data = await res.json();
