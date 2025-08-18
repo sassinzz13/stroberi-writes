@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/STRAWBERRY.png" />
+     </head>
       <body
         className={`${playfair.variable} ${geistSans.variable} ${geistMono.variable}`}
       >
@@ -40,7 +41,7 @@ export default function RootLayout({ children }) {
           {children}
         </AuthProvider>
       </body>
-      </head>
+     
     </html>
   );
 }
