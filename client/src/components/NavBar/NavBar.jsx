@@ -4,7 +4,7 @@ import styles from "../NavBar/NavBar.module.css";
 import { AuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import { BACKEND_URL } from "@/config";
 const NavBar = () => {
   const { isLoggedIn, isSuperuser, loadingUser, logout } = useContext(AuthContext);
   const router = useRouter();
@@ -24,7 +24,7 @@ const NavBar = () => {
     if (!query.trim()) { setResults([]); return; }
 
     const timeout = setTimeout(() => {
-      fetch(`http://127.0.0.1:8000/api/blog/posts/search/?query=${encodeURIComponent(query)}`)
+      fetch(`${BACKEND_URL}/api/blog/posts/search/?query=${encodeURIComponent(query)}`)
         .then(res => res.ok ? res.json() : Promise.reject(res.status))
         .then(data => { setResults(data); setShowDropdown(true); })
         .catch(err => console.error("Search failed:", err));
@@ -47,7 +47,7 @@ const NavBar = () => {
   const handleLogout = async () => {
     const token = localStorage.getItem("accessToken");
     try {
-      await fetch("http://127.0.0.1:8000/api/auth/logout/", {
+      await fetch(`${BACKEND_URL}/api/auth/logout/`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       });
