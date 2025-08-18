@@ -44,17 +44,14 @@ def get_post_list_api(request, tag_slug=None):
 # allows us to get the detail of the post
 @api_view(['GET'])
 def get_post_detail_api(request, year, month, day, slug):
-    # Make a timezone-aware datetime
-    start = timezone.make_aware(datetime(int(year), int(month), int(day), 0, 0, 0))
-    end = start + timedelta(days=1)
-
-    post_obj = get_object_or_404(
-        Post.published.prefetch_related('tags', 'comments').select_related('author'),
-        slug=slug,
-        publish__gte=start,
-        publish__lt=end
-    )
-
+    # Get the latest post with the given slug
+    post_obj = Post.published.prefetch_related('tags', 'comments').select_related('author') \
+                    .filter(slug=slug) \
+                    .order_by('-publish') \
+                    .first()
+    
+    if not post_obj:
+        return Response({"detail": "No Post matches the given query."}, status=status.HTTP_404_NOT_FOUND)
     comments = post_obj.comments.filter(active=True)
     comments_serializer = CommentSerializer(comments, many=True)
 
