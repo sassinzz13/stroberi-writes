@@ -4,7 +4,7 @@ import { Playfair_Display } from "next/font/google";
 import TopBar from "@/components/TopBar/TopBar";
 import NavBar from "@/components/NavBar/NavBar";
 import { AuthProvider } from "@/context/AuthContext";
-
+import Head from 'next/head'
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,6 +29,8 @@ const playfair = Playfair_Display({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/STRAWBERRY.png" />
       <body
         className={`${playfair.variable} ${geistSans.variable} ${geistMono.variable}`}
       >
@@ -38,6 +40,7 @@ export default function RootLayout({ children }) {
           {children}
         </AuthProvider>
       </body>
+      </head>
     </html>
   );
 }
