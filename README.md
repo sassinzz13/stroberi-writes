@@ -7,4 +7,6 @@ stroberi-writes is a modern, full-stack blog platform built with Next.js on the 
 🗃️ Blog post creation, editing, and deletion  
 🌐 Responsive design optimized for mobile & desktop  
 
-# WORK IN PROGRESS
+# DONE  
+My very first blog app to learn about web development  
+seeked help through chatGPT to learn proper ways of developing it
