@@ -3,7 +3,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "@/context/AuthContext";
 import styles from "../Login/Login.module.css";
 import { useRouter } from "next/navigation";
-
+import { BACKEND_URL } from "@/config";
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [username, setUsername] = useState("");
@@ -16,7 +16,7 @@ const Login = () => {
     setError("");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/auth/login/", {
+      const res = await fetch(`${BACKEND_URL}/api/auth/login/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
