@@ -37,7 +37,7 @@ const Poems = () => {
 
   return (
     <div className={styles.home}>
-      <h1>Creative Writing</h1>
+      <h1>Poems</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
