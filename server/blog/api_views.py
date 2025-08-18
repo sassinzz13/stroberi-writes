@@ -10,7 +10,8 @@ from django.core.mail import send_mail
 from django.contrib.postgres.search import TrigramSimilarity
 from .models import Post, Comment
 from .serializers import PostSerializer, CommentSerializer, EmailPostSerializer, SearchSerializer, PostCreateSerializer
-
+from datetime import datetime, timedelta
+from django.utils import timezone
 ALLOWED_TAGS = ["Creative Writing", "Poems", "Short Stories", "Literary Analysis", "Entertainment"]
 
 # allows us to get the list of posts in the api
