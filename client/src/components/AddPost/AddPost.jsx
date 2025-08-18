@@ -105,7 +105,7 @@ const AddPost = () => {
     }
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/blog/posts/create/", {
+      const res = await fetch(`${BACKEND_URL}/api/blog/posts/create/`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
