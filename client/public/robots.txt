@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://stroberi-writes.vercel.app
+
+# Sitemaps
+Sitemap: https://stroberi-writes.vercel.app/sitemap.xml
