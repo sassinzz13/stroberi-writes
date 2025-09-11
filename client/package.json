@@ -15,6 +15,7 @@
     "dompurify": "^3.2.6",
     "html-react-parser": "^5.2.6",
     "lucide-react": "^0.539.0",
+    "next-sitemap": "^4.2.3",
     "next": "15.4.5",
     "quill": "^2.0.3",
     "quill-delta-to-react": "^1.1.1",
