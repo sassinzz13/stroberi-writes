@@ -1,5 +1,7 @@
 package fernlabs.com.stroberiwrites.dto;
 
+import java.time.LocalDateTime;
+
 /*
 MENTAL MODEL — response DTO
 ===========================
@@ -26,6 +28,9 @@ public record PostResponseDTO(
         Long id,
         String title,
         String slug,
-        String content
+        String content,
+        CategoryResponseDTO category,
+        LocalDateTime createdAt,
+        LocalDateTime updatedAt
 ) {
 }

@@ -1,6 +1,7 @@
 package fernlabs.com.stroberiwrites.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 /*
@@ -40,6 +41,9 @@ public record PostRequestDTO(
         String slug,
 
         @NotBlank(message = "Content is required")
-        String content
+        String content,
+
+        @NotNull(message = "Category is required")
+        Long categoryId
 ) {
 }

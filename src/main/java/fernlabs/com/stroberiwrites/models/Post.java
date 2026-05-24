@@ -1,5 +1,10 @@
 package fernlabs.com.stroberiwrites.models;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.*;
 
 /*
@@ -63,6 +68,18 @@ public class Post {
     @Column(columnDefinition = "TEXT") // Content can be long, so we use TEXT type in the database
     private String content;
 
+    // foreign key
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
     /*
     equivalent to djangos
     def get_title(self):
@@ -84,6 +101,18 @@ public class Post {
         return id;
     }
 
+    public Category getCategory() {
+    return category;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
     /*
     equivalent to djangos
     def set_title(self, title):
@@ -100,6 +129,10 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setCategory(Category category) {
+    this.category = category;
     }
     
     // note no setID because the database will automatically generate the ID for us

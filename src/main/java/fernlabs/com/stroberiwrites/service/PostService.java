@@ -5,10 +5,15 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fernlabs.com.stroberiwrites.dto.CategoryResponseDTO;
 import fernlabs.com.stroberiwrites.dto.PostRequestDTO;
 import fernlabs.com.stroberiwrites.dto.PostResponseDTO;
+import fernlabs.com.stroberiwrites.exceptions.CategoryNotFoundException;
+import fernlabs.com.stroberiwrites.exceptions.DuplicateSlugException;
 import fernlabs.com.stroberiwrites.exceptions.PostNotFoundException;
+import fernlabs.com.stroberiwrites.models.Category;
 import fernlabs.com.stroberiwrites.models.Post;
+import fernlabs.com.stroberiwrites.repository.CategoryRepository;
 import fernlabs.com.stroberiwrites.repository.PostRepository;
 
 /*
@@ -49,9 +54,11 @@ public class PostService {
     // The service depends on the repository, same constructor-injection pattern
     // as the controller. The chain is: Controller → Service → Repository.
     private final PostRepository postRepository;
+    private final CategoryRepository categoryRepository;
 
-    public PostService(PostRepository postRepository) {
+    public PostService(PostRepository postRepository, CategoryRepository categoryRepository) {
         this.postRepository = postRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     /*
@@ -111,11 +118,15 @@ public class PostService {
     */
     @Transactional
     public PostResponseDTO createPost(PostRequestDTO request) {
+        throwIfSlugExists(request.slug());
+
         Post post = new Post();
+        Category category = getCategoryOrThrow(request.categoryId());
 
         post.setTitle(request.title());
         post.setSlug(request.slug());
         post.setContent(request.content());
+        post.setCategory(category);
 
         Post savedPost = postRepository.save(post);
 
@@ -139,10 +150,14 @@ public class PostService {
     public PostResponseDTO updatePost(Long id, PostRequestDTO request) {
         Post existingPost = postRepository.findById(id)
                 .orElseThrow(() -> new PostNotFoundException("Post not found"));
+        Category category = getCategoryOrThrow(request.categoryId());
+
+        throwIfSlugBelongsToAnotherPost(request.slug(), id);
 
         existingPost.setTitle(request.title());
         existingPost.setSlug(request.slug());
         existingPost.setContent(request.content());
+        existingPost.setCategory(category);
 
         Post savedPost = postRepository.save(existingPost);
 
@@ -173,11 +188,50 @@ public class PostService {
     refactor it freely without breaking anything outside this file.
     */
     private PostResponseDTO convertToDTO(Post post) {
+        Category category = post.getCategory();
+
         return new PostResponseDTO(
                 post.getId(),
                 post.getTitle(),
                 post.getSlug(),
-                post.getContent()
+                post.getContent(),
+                convertCategoryToDTO(category),
+                post.getCreatedAt(),
+                post.getUpdatedAt()
         );
+    }
+
+    private Category getCategoryOrThrow(Long categoryId) {
+        return categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new CategoryNotFoundException("Category not found"));
+    }
+
+    private CategoryResponseDTO convertCategoryToDTO(Category category) {
+        if (category == null) {
+            return null;
+        }
+
+        return new CategoryResponseDTO(
+                category.getId(),
+                category.getName(),
+                category.getSlug(),
+                category.getCreatedAt(),
+                category.getUpdatedAt()
+        );
+    }
+
+    private void throwIfSlugExists(String slug) {
+        postRepository.findBySlug(slug)
+                .ifPresent(post -> {
+                    throw new DuplicateSlugException("Post slug already exists");
+                });
+    }
+
+    private void throwIfSlugBelongsToAnotherPost(String slug, Long postId) {
+        postRepository.findBySlug(slug)
+                .filter(post -> !post.getId().equals(postId))
+                .ifPresent(post -> {
+                    throw new DuplicateSlugException("Post slug already exists");
+                });
     }
 }
