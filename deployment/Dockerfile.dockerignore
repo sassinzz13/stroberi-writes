@@ -1,0 +1,16 @@
+**
+!backend/
+!backend/**
+!frontend/
+!frontend/**
+**/.git
+**/node_modules
+**/.next
+**/.env
+**/.env.*
+**/bin
+**/tmp
+**/coverage
+**/*.tsbuildinfo
+**/next-env.d.ts
+**/.DS_Store

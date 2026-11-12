@@ -1,0 +1,20 @@
+# Local configuration and credentials
+.env
+.env.*
+*.pem
+*.key
+
+# Dependencies and generated output
+node_modules/
+.next/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+*.log
+.DS_Store
+
+# Local tooling/reference collections and unreviewed design assets
+/skills/
+/third-party/
+/design/
